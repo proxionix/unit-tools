@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Unit-Tools</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_settings">Settings</string>
+    <string name="cd_home">Accueil</string>
+    <string name="cd_settings">Paramètres</string>
+</resources>
