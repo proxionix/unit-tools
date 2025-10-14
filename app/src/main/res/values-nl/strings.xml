@@ -1,0 +1,27 @@
+<resources>
+    <!-- App -->
+    <string name="app_name">Unit Tools</string>
+    <string name="cd_app_logo">App-logo</string>
+
+    <!-- Navigatie (bottom bar, CD) -->
+    <string name="nav_home">Start</string>
+    <string name="nav_settings">Instellingen</string>
+    <string name="cd_home">Ga naar Start</string>
+    <string name="cd_settings">Instellingen openen</string>
+
+    <!-- Instellingen scherm -->
+    <string name="settings_title">Instellingen</string>
+
+    <!-- Thema groep -->
+    <string name="settings_theme_group">Thema</string>
+    <string name="settings_theme_system">Systeem</string>
+    <string name="settings_theme_light">Licht</string>
+    <string name="settings_theme_dark">Donker</string>
+
+    <!-- Taal groep -->
+    <string name="settings_lang_group">Taal</string>
+    <string name="settings_lang_system">Systeem</string>
+    <string name="settings_lang_fr">Français</string>
+    <string name="settings_lang_nl">Nederlands</string>
+    <string name="settings_lang_en">English</string>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+    <!-- App -->
+    <string name="app_name">Unit Tools</string>
+    <string name="cd_app_logo">Logo de l’application</string>
+
+    <!-- Navigation (bottom bar, CD) -->
+    <string name="nav_home">Accueil</string>
+    <string name="nav_settings">Paramètres</string>
+    <string name="cd_home">Aller à l’accueil</string>
+    <string name="cd_settings">Ouvrir les paramètres</string>
+
+    <!-- Écran Paramètres -->
+    <string name="settings_title">Paramètres</string>
+
+    <!-- Groupe Thème -->
+    <string name="settings_theme_group">Thème</string>
+    <string name="settings_theme_system">Système</string>
+    <string name="settings_theme_light">Clair</string>
+    <string name="settings_theme_dark">Sombre</string>
+
+    <!-- Groupe Langue -->
+    <string name="settings_lang_group">Langue</string>
+    <string name="settings_lang_system">Système</string>
+    <string name="settings_lang_fr">Français</string>
+    <string name="settings_lang_nl">Nederlands</string>
+    <string name="settings_lang_en">English</string>
+</resources>
