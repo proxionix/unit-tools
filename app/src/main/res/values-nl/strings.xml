@@ -39,6 +39,8 @@
     <string name="order_search_hint">Zoeken</string>
     <string name="order_filter_instock">Op voorraad</string>
     <string name="order_preview">PDF-voorbeeld</string>
+    <string name="order_stepper_dec_cd">Hoeveelheid verlagen</string>
+    <string name="order_stepper_inc_cd">Hoeveelheid verhogen</string>
     <string name="search_hint">Zoeken</string>
     <string name="cd_sort">Sorteren</string>
     <string name="cd_filter">Filteren</string>

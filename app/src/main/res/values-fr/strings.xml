@@ -39,6 +39,8 @@
     <string name="order_search_hint">Rechercher</string>
     <string name="order_filter_instock">En stock</string>
     <string name="order_preview">Aperçu PDF</string>
+    <string name="order_stepper_dec_cd">Diminuer la quantité</string>
+    <string name="order_stepper_inc_cd">Augmenter la quantité</string>
     <string name="search_hint">Rechercher</string>
     <string name="cd_sort">Trier</string>
     <string name="cd_filter">Filtrer</string>
