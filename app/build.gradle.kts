@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material.icons)
     implementation(libs.androidx.compose.runtime.saveable)
+    implementation(libs.androidx.core.ktx)
 
 
     // Activity + Lifecycle
@@ -71,6 +72,12 @@ dependencies {
 
     // Navigation Compose (version gérée par le catalog)
     implementation(libs.androidx.navigation.compose)
+
+    // AppCompat pour la gestion des locales (Android 13+ et versions antérieures)
+    implementation(libs.androidx.appcompat)
+
+    // DataStore pour la persistance des préférences
+    implementation(libs.androidx.datastore.preferences)
 
     // Tests
     testImplementation(libs.junit)
