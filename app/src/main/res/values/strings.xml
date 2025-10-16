@@ -36,7 +36,14 @@
     <string name="order_last_name">Last name</string>
     <string name="order_qty">Qty</string>
     <string name="order_submit">Send order</string>
+    <string name="order_search_hint">Search</string>
+    <string name="order_filter_instock">In stock</string>
+    <string name="order_preview">Preview PDF</string>
     <string name="order_email_subject">Material order</string>
     <string name="order_email_body">See the attached order PDF.</string>
     <string name="cd_preview_pdf">Preview PDF</string>
+    <!-- Commerce UI additions -->
+    <string name="search_hint">Search</string>
+    <string name="cd_sort">Sort</string>
+    <string name="cd_filter">Filter</string>
 </resources>
