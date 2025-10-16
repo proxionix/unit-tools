@@ -3,6 +3,7 @@ package com.unit.tools.ui.components
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarDefaults
@@ -39,7 +40,11 @@ fun BottomBar(
     ) {
         NavigationBarItem(
             selected = currentRoute == Routes.HOME,
-            onClick = { onNavigate(Routes.HOME) },
+            onClick = { 
+                if (currentRoute != Routes.HOME) {
+                    onNavigate(Routes.HOME)
+                }
+            },
             icon = {
                 Icon(
                     imageVector = Icons.Filled.Home,
@@ -51,8 +56,29 @@ fun BottomBar(
             colors = itemColors
         )
         NavigationBarItem(
+            selected = currentRoute == Routes.ORDER,
+            onClick = { 
+                if (currentRoute != Routes.ORDER) {
+                    onNavigate(Routes.ORDER)
+                }
+            },
+            icon = {
+                Icon(
+                    imageVector = Icons.Filled.ShoppingCart,
+                    contentDescription = stringResource(id = R.string.cd_order)
+                )
+            },
+            label = { Text(stringResource(id = R.string.nav_order)) },
+            alwaysShowLabel = alwaysShowLabel,
+            colors = itemColors
+        )
+        NavigationBarItem(
             selected = currentRoute == Routes.SETTINGS,
-            onClick = { onNavigate(Routes.SETTINGS) },
+            onClick = { 
+                if (currentRoute != Routes.SETTINGS) {
+                    onNavigate(Routes.SETTINGS)
+                }
+            },
             icon = {
                 Icon(
                     imageVector = Icons.Filled.Settings,

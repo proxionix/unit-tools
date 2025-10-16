@@ -62,9 +62,16 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material.icons)
+    // Icônes étendues (nécessaire pour Icons.Outlined.Visibility)
+    implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.compose.runtime.saveable)
     implementation(libs.androidx.core.ktx)
-
+    
+    // PDF manipulation
+    implementation(libs.pdfbox.android)
+    
+    // JSON parsing
+    implementation(libs.gson)
 
     // Activity + Lifecycle
     implementation(libs.androidx.activity.compose)

@@ -25,4 +25,18 @@
     <string name="settings_lang_nl">Nederlands</string>
     <string name="settings_lang_en">English</string>
     <string name="cd_selected">Sélectionné</string>
+
+    <!-- Écran Commande -->
+    <string name="nav_order">Commande</string>
+    <string name="cd_order">Ouvrir l\'écran de commande</string>
+    <string name="order_title">Commande de matériel</string>
+    <string name="order_identity_section">Identité du technicien</string>
+    <string name="order_articles_section">Articles</string>
+    <string name="order_first_name">Prénom</string>
+    <string name="order_last_name">Nom</string>
+    <string name="order_qty">Qté</string>
+    <string name="order_submit">Envoyer la commande</string>
+    <string name="order_email_subject">Commande de matériel</string>
+    <string name="order_email_body">Voir le PDF de commande en pièce jointe.</string>
+    <string name="cd_preview_pdf">Aperçu PDF</string>
 </resources>

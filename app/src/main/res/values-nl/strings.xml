@@ -25,4 +25,18 @@
     <string name="settings_lang_nl">Nederlands</string>
     <string name="settings_lang_en">English</string>
     <string name="cd_selected">Geselecteerd</string>
+
+    <!-- Bestelling scherm -->
+    <string name="nav_order">Bestelling</string>
+    <string name="cd_order">Bestelscherm openen</string>
+    <string name="order_title">Materiaal bestelling</string>
+    <string name="order_identity_section">Identiteit technicus</string>
+    <string name="order_articles_section">Artikelen</string>
+    <string name="order_first_name">Voornaam</string>
+    <string name="order_last_name">Achternaam</string>
+    <string name="order_qty">Aantal</string>
+    <string name="order_submit">Bestelling verzenden</string>
+    <string name="order_email_subject">Materiaal bestelling</string>
+    <string name="order_email_body">Zie de bijgevoegde bestel-PDF.</string>
+    <string name="cd_preview_pdf">PDF voorbeeld</string>
 </resources>
