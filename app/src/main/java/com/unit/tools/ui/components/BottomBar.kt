@@ -3,7 +3,7 @@ package com.unit.tools.ui.components
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material.icons.automirrored.outlined.Assignment
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarDefaults
@@ -64,8 +64,8 @@ fun BottomBar(
             },
             icon = {
                 Icon(
-                    imageVector = Icons.Filled.ShoppingCart,
-                    contentDescription = stringResource(id = R.string.cd_order)
+                    imageVector = Icons.AutoMirrored.Outlined.Assignment,
+                    contentDescription = stringResource(id = R.string.nav_order)
                 )
             },
             label = { Text(stringResource(id = R.string.nav_order)) },

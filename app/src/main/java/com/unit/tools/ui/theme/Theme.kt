@@ -52,7 +52,7 @@ fun UnitToolsTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = AppTypography,
+        typography = CompactTypography,
         shapes = AppShapes,
         content = content
     )

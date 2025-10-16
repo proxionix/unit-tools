@@ -41,6 +41,7 @@
     <string name="order_preview">Preview PDF</string>
     <string name="order_stepper_dec_cd">Decrease quantity</string>
     <string name="order_stepper_inc_cd">Increase quantity</string>
+    <string name="order_identity_missing">Please fill first and last name</string>
     <string name="order_email_subject">Material order</string>
     <string name="order_email_body">See the attached order PDF.</string>
     <string name="cd_preview_pdf">Preview PDF</string>
