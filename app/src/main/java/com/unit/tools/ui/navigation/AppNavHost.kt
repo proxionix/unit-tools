@@ -1,6 +1,8 @@
 package com.unit.tools.ui.navigation
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.material3.Scaffold
@@ -13,6 +15,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.unit.tools.ui.components.BottomBar
+import com.unit.tools.ui.components.HomeTopBarWithLogo
+import com.unit.tools.ui.components.SettingsTopBarTitle
 import com.unit.tools.ui.screens.HomeScreen
 import com.unit.tools.ui.screens.SettingsScreen
 
@@ -26,6 +30,13 @@ fun AppNavHost() {
 
     Scaffold(
         contentWindowInsets = WindowInsets.safeDrawing,
+        topBar = {
+            when (currentRoute) {
+                Routes.HOME -> HomeTopBarWithLogo()
+                Routes.SETTINGS -> SettingsTopBarTitle()
+                else -> {}
+            }
+        },
         bottomBar = {
             BottomBar(
                 currentRoute = currentRoute,
@@ -36,13 +47,18 @@ fun AppNavHost() {
             )
         }
     ) { innerPadding ->
-        NavHost(
-            navController = navController,
-            startDestination = Routes.HOME,
-            modifier = Modifier.padding(innerPadding)
+        Box(
+            modifier = Modifier
+                .padding(innerPadding)
+                .consumeWindowInsets(innerPadding)
         ) {
-            composable(Routes.HOME) { HomeScreen() }
-            composable(Routes.SETTINGS) { SettingsScreen() }
+            NavHost(
+                navController = navController,
+                startDestination = Routes.HOME
+            ) {
+                composable(Routes.HOME) { HomeScreen() }
+                composable(Routes.SETTINGS) { SettingsScreen() }
+            }
         }
     }
 }
