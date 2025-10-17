@@ -48,4 +48,5 @@
     <string name="order_email_subject">Commande de matériel</string>
     <string name="order_email_body">Voir le PDF de commande en pièce jointe.</string>
     <string name="cd_preview_pdf">Aperçu PDF</string>
+    <string name="order_row_meta">%1$s - Max %2$d - Par %3$d</string>
 </resources>
