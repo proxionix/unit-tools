@@ -1,6 +1,7 @@
 package com.unit.tools.ui.order
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.unit.tools.data.OrderCatalog
 import com.unit.tools.model.OrderItem
@@ -16,6 +17,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class MaterialOrderViewModel : ViewModel() {
+    companion object { private const val TAG = "MaterialOrderVM" }
 
     // Catalogue des produits (chargé depuis JSON)
     private val _catalog = MutableStateFlow<List<OrderItem>>(emptyList())
@@ -37,8 +39,13 @@ class MaterialOrderViewModel : ViewModel() {
         (1..24).associate { i -> "a$i" to (i - 1) }
     }
 
+    init {
+        // Debug-time assert to ensure mapping covers a1..a24
+        check(indexByCode.size == 24) { "indexByCode must contain 24 entries for a1..a24" }
+    }
+
     // Recherche / tri / filtres / vue
-    enum class Sort { Relevance, Name, Max, Stock }
+    enum class Sort { Relevance, Name, Max }
 
     private val _query = MutableStateFlow("")
     val query: StateFlow<String> = _query.asStateFlow()
@@ -84,6 +91,18 @@ class MaterialOrderViewModel : ViewModel() {
             viewModelScope.launch(Dispatchers.IO) {
                 val loaded = OrderCatalog.load(context)
                 _catalog.value = loaded
+
+                // Validate catalog codes after load
+                val expected = (1..24).map { "a$it" }.toSet()
+                val codes = loaded.map { it.code }.toSet()
+                val missing = expected - codes
+                val extras = codes - expected
+                if (missing.isNotEmpty() || extras.isNotEmpty()) {
+                    Log.w(
+                        TAG,
+                        "Catalog codes mismatch. Missing=${missing.joinToString()} Extras=${extras.joinToString()}"
+                    )
+                }
             }
         }
     }
@@ -102,18 +121,7 @@ class MaterialOrderViewModel : ViewModel() {
         _lastName.value = value
     }
 
-    /**
-     * Modifie la quantité d'un produit (index 1-based: 1..24)
-     */
-    fun setQuantity(index1Based: Int, value: Int) {
-        if (index1Based in 1..24) {
-            val idx = index1Based - 1
-            val max = _catalog.value.getOrNull(idx)?.max ?: Int.MAX_VALUE
-            _quantities.update { old ->
-                old.copyOf().also { it[idx] = value.coerceIn(0, max) }
-            }
-        }
-    }
+    // setQuantity(index1Based, value) removed; UI uses setQty(code, value)
 
     /**
      * Met à jour la quantité via le code produit (ex: "a1").
@@ -127,20 +135,12 @@ class MaterialOrderViewModel : ViewModel() {
         }
     }
 
-    /** Incrémente de 1 en respectant le max du produit. */
-    fun increment(code: String, max: Int) {
-        val idx = indexByCode[code] ?: return
-        _quantities.update { cur ->
-            cur.copyOf().also { it[idx] = (it[idx] + 1).coerceAtMost(max) }
-        }
-    }
+    // increment/decrement helpers are unnecessary with onValueChange driving setQty; removed to avoid unused warnings
 
-    /** Décrémente de 1 sans passer sous 0. */
-    fun decrement(code: String) {
-        val idx = indexByCode[code] ?: return
-        _quantities.update { cur ->
-            cur.copyOf().also { it[idx] = (it[idx] - 1).coerceAtLeast(0) }
-        }
+    /** Retourne la quantité courante pour un code produit donné. */
+    fun quantityOf(code: String): Int {
+        val idx = indexByCode[code] ?: return 0
+        return _quantities.value.getOrElse(idx) { 0 }
     }
 
     /**

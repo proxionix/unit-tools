@@ -44,14 +44,12 @@ fun MaterialOrderScreen(
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
 
-    val catalog by viewModel.catalog.collectAsState()
+    // Read catalog via VM helper when needed; avoid unused local state
     val firstName by viewModel.firstName.collectAsState()
     val lastName by viewModel.lastName.collectAsState()
     val visible by viewModel.visibleItems.collectAsState(initial = emptyList())
-    val quantities by viewModel.quantities.collectAsState()
+    // Quantities accessed via viewModel.quantityOf(code) per item
     val inStockOnly by viewModel.inStockOnly.collectAsState()
-    // Mapping stable code -> index for fast lookup and stable binding
-    val indexByCode = remember(catalog) { catalog.mapIndexed { i, it -> it.code to i }.toMap() }
 
     // Charger le catalogue + lier actions top bar
     LaunchedEffect(Unit) {
@@ -114,8 +112,8 @@ fun MaterialOrderScreen(
                 // Determine current app language for per-item localized name
                 val appLocales = AppCompatDelegate.getApplicationLocales()
                 val lang = if (!appLocales.isEmpty) appLocales[0]?.language ?: java.util.Locale.getDefault().language else java.util.Locale.getDefault().language
-                val idx = indexByCode[item.code] ?: return@items
-                val value = quantities.getOrElse(idx) { 0 }
+                // Quantité actuelle via VM helper (évite tout mapping local)
+                val value = viewModel.quantityOf(item.code)
                 OrderRow(
                     name = if (lang.startsWith("nl", ignoreCase = true)) item.name_nl else item.name_fr,
                     code = item.code,
