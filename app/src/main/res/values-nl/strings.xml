@@ -25,6 +25,7 @@
     <string name="settings_lang_nl">Nederlands</string>
     <string name="settings_lang_en">English</string>
     <string name="cd_selected">Geselecteerd</string>
+    <string name="settings_lang_accessibility">Taal wijzigen, huidige waarde: %1$s</string>
 
     <!-- Bestelling scherm -->
     <string name="nav_order">Bestelling</string>
@@ -45,7 +46,7 @@
     <string name="cd_sort">Sorteren</string>
     <string name="cd_filter">Filteren</string>
     <string name="order_email_subject">Materiaal bestelling</string>
-    <string name="order_email_body">Zie de bijgevoegde bestel-PDF.</string>
+    <string name="order_email_body">Bestelling in bijlage.</string>
     <string name="cd_preview_pdf">PDF voorbeeld</string>
     <string name="order_row_meta">%1$s - Max %2$d - Per %3$d</string>
     
@@ -67,6 +68,6 @@
     <string name="details_body">Thema en navigatie operationeel.</string>
 
     <!-- Berichten -->
-    <string name="msg_preview_error">Voorbeeldfout: %1$s</string>
-    <string name="msg_send_error">Fout: %1$s</string>
+    <string name="msg_preview_error">Voorbeeld genereren mislukt.</string>
+    <string name="msg_send_error">Verzenden mislukt.</string>
 </resources>

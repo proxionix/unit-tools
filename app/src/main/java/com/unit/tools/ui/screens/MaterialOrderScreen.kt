@@ -71,7 +71,7 @@ fun MaterialOrderScreen(
                     PdfPreviewer.open(context, file)
                 } catch (e: Exception) {
                     Log.e(TAG, "Preview PDF error", e)
-                    val msg = context.getString(R.string.msg_preview_error, e.message ?: "")
+                    val msg = context.getString(R.string.msg_preview_error)
                     snackbarHostState.showSnackbar(msg)
                 }
             }
@@ -91,6 +91,17 @@ fun MaterialOrderScreen(
         bottomBar = {},
         snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { inner ->
+        // Debug language badge (small, non-intrusive)
+        run {
+            val appLocales = AppCompatDelegate.getApplicationLocales()
+            val debugLang = if (!appLocales.isEmpty) appLocales[0]?.language else java.util.Locale.getDefault().language
+            Text(
+                text = "lang: ${debugLang ?: ""}",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 4.dp)
+            )
+        }
         // Optional sticky-ish filter row just under the TopAppBar
         FilterBar(
             inStockOnly = inStockOnly,
@@ -178,7 +189,7 @@ fun MaterialOrderScreen(
                                 EmailSender.sendPdf(context, pdfFile, recipient, subject, body)
                             } catch (e: Exception) {
                                 Log.e(TAG, "Error generating or sending PDF", e)
-                                val msg = context.getString(R.string.msg_send_error, e.message ?: "")
+                                val msg = context.getString(R.string.msg_send_error)
                                 snackbarHostState.showSnackbar(msg)
                             }
                         }

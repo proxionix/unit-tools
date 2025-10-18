@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(test -d \"s:\\UnitTools\\app\\src\\main\\res\\values-en\")",
+      "Bash(test:*)",
+      "Read(//s/**)",
+      "Bash(./gradlew lintDebug:*)",
+      "Bash(cat:*)",
+      "Bash(./gradlew clean:*)",
+      "Bash(./gradlew assembleDebug:*)"
     ],
     "deny": [],
     "ask": []

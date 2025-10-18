@@ -69,8 +69,18 @@ fun SettingsScreen() {
             currentTag = appLocale,
             onSelect = { tag ->
                 scope.launch {
+                    android.util.Log.d("SettingsScreen", "=== Language change requested: '$tag' ===")
+
+                    // 1. Sauvegarder la nouvelle locale dans DataStore
+                    android.util.Log.d("SettingsScreen", "Step 1: Saving to DataStore")
                     store.setAppLocale(tag)
+
+                    // 2. Appliquer la locale via AppCompatDelegate
+                    // Cela déclenche automatiquement la recréation de l'Activity
+                    android.util.Log.d("SettingsScreen", "Step 2: Calling AppLocaleManager.apply('$tag')")
                     AppLocaleManager.apply(tag)
+
+                    android.util.Log.d("SettingsScreen", "Step 3: AppLocaleManager.apply() completed, Activity should recreate automatically")
                 }
             }
         )
@@ -95,7 +105,7 @@ private fun LanguageDropdown(
     val langGroupLabel = stringResource(R.string.settings_lang_group)
 
     // Texte pour l'accessibilité
-    val accessibilityLabel = "Change language, current value: $currentLabel"
+    val accessibilityLabel = stringResource(R.string.settings_lang_accessibility, currentLabel)
 
     ExposedDropdownMenuBox(
         expanded = expanded,

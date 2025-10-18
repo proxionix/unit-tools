@@ -25,6 +25,7 @@
     <string name="settings_lang_nl">Nederlands</string>
     <string name="settings_lang_en">English</string>
     <string name="cd_selected">Selected</string>
+    <string name="settings_lang_accessibility">Change language, current value: %1$s</string>
 
     <!-- Order screen -->
     <string name="nav_order">Order</string>
@@ -68,6 +69,6 @@
     <string name="details_body">Theme and Navigation operational.</string>
 
     <!-- Messages -->
-    <string name="msg_preview_error">Preview error: %1$s</string>
-    <string name="msg_send_error">Error: %1$s</string>
+    <string name="msg_preview_error">Failed to generate preview.</string>
+    <string name="msg_send_error">Failed to send.</string>
 </resources>
