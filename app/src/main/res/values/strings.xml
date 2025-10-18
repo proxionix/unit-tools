@@ -47,7 +47,27 @@
     <string name="cd_preview_pdf">Preview PDF</string>
     <string name="order_row_meta">%1$s - Max %2$d - Per %3$d</string>
     <!-- Commerce UI additions -->
-    <string name="search_hint">Search</string>
     <string name="cd_sort">Sort</string>
     <string name="cd_filter">Filter</string>
+    
+    <!-- Generic/common -->
+    <string name="cd_back">Back</string>
+
+    <!-- Home -->
+    <string name="home_title">Home Screen</string>
+
+    <!-- Form screen -->
+    <string name="form_title">Form</string>
+    <string name="form_name">Name</string>
+    <string name="form_email">Email</string>
+    <string name="form_submit">Submit</string>
+
+    <!-- Details screen -->
+    <string name="details_title">Details</string>
+    <string name="details_header">Details screen</string>
+    <string name="details_body">Theme and Navigation operational.</string>
+
+    <!-- Messages -->
+    <string name="msg_preview_error">Preview error: %1$s</string>
+    <string name="msg_send_error">Error: %1$s</string>
 </resources>

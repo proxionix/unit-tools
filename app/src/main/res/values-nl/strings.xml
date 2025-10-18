@@ -42,11 +42,31 @@
     <string name="order_stepper_dec_cd">Hoeveelheid verlagen</string>
     <string name="order_stepper_inc_cd">Hoeveelheid verhogen</string>
     <string name="order_identity_missing">Gelieve voornaam en achternaam in te vullen</string>
-    <string name="search_hint">Zoeken</string>
     <string name="cd_sort">Sorteren</string>
     <string name="cd_filter">Filteren</string>
     <string name="order_email_subject">Materiaal bestelling</string>
     <string name="order_email_body">Zie de bijgevoegde bestel-PDF.</string>
     <string name="cd_preview_pdf">PDF voorbeeld</string>
     <string name="order_row_meta">%1$s - Max %2$d - Per %3$d</string>
+    
+    <!-- Algemeen -->
+    <string name="cd_back">Terug</string>
+
+    <!-- Start -->
+    <string name="home_title">Startscherm</string>
+
+    <!-- Formulier scherm -->
+    <string name="form_title">Formulier</string>
+    <string name="form_name">Naam</string>
+    <string name="form_email">E-mail</string>
+    <string name="form_submit">Valideren</string>
+
+    <!-- Details scherm -->
+    <string name="details_title">Details</string>
+    <string name="details_header">Details scherm</string>
+    <string name="details_body">Thema en navigatie operationeel.</string>
+
+    <!-- Berichten -->
+    <string name="msg_preview_error">Voorbeeldfout: %1$s</string>
+    <string name="msg_send_error">Fout: %1$s</string>
 </resources>

@@ -71,7 +71,8 @@ fun MaterialOrderScreen(
                     PdfPreviewer.open(context, file)
                 } catch (e: Exception) {
                     Log.e(TAG, "Preview PDF error", e)
-                    snackbarHostState.showSnackbar("Preview error: ${e.message}")
+                    val msg = context.getString(R.string.msg_preview_error, e.message ?: "")
+                    snackbarHostState.showSnackbar(msg)
                 }
             }
         }
@@ -177,7 +178,8 @@ fun MaterialOrderScreen(
                                 EmailSender.sendPdf(context, pdfFile, recipient, subject, body)
                             } catch (e: Exception) {
                                 Log.e(TAG, "Error generating or sending PDF", e)
-                                snackbarHostState.showSnackbar("Error: ${e.message}")
+                                val msg = context.getString(R.string.msg_send_error, e.message ?: "")
+                                snackbarHostState.showSnackbar(msg)
                             }
                         }
                     },

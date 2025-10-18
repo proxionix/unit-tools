@@ -42,11 +42,31 @@
     <string name="order_stepper_dec_cd">Diminuer la quantité</string>
     <string name="order_stepper_inc_cd">Augmenter la quantité</string>
     <string name="order_identity_missing">Renseignez le prénom et le nom</string>
-    <string name="search_hint">Rechercher</string>
     <string name="cd_sort">Trier</string>
     <string name="cd_filter">Filtrer</string>
     <string name="order_email_subject">Commande de matériel</string>
     <string name="order_email_body">Voir le PDF de commande en pièce jointe.</string>
     <string name="cd_preview_pdf">Aperçu PDF</string>
     <string name="order_row_meta">%1$s - Max %2$d - Par %3$d</string>
+    
+    <!-- Génériques -->
+    <string name="cd_back">Retour</string>
+
+    <!-- Accueil -->
+    <string name="home_title">Accueil</string>
+
+    <!-- Écran Formulaire -->
+    <string name="form_title">Formulaire</string>
+    <string name="form_name">Nom</string>
+    <string name="form_email">Email</string>
+    <string name="form_submit">Valider</string>
+
+    <!-- Écran Détails -->
+    <string name="details_title">Détails</string>
+    <string name="details_header">Écran Détails</string>
+    <string name="details_body">Thème et Navigation opérationnels.</string>
+
+    <!-- Messages -->
+    <string name="msg_preview_error">Erreur d’aperçu : %1$s</string>
+    <string name="msg_send_error">Erreur : %1$s</string>
 </resources>

@@ -65,7 +65,7 @@ fun BottomBar(
             icon = {
                 Icon(
                     imageVector = Icons.AutoMirrored.Outlined.Assignment,
-                    contentDescription = stringResource(id = R.string.nav_order)
+                    contentDescription = stringResource(id = R.string.cd_order)
                 )
             },
             label = { Text(stringResource(id = R.string.nav_order)) },

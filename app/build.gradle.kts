@@ -39,6 +39,12 @@ android {
     buildFeatures {
         compose = true
     }
+
+    lint {
+        abortOnError = true
+        // Ensure lint.xml at project root is used
+        lintConfig = rootProject.file("lint.xml")
+    }
 }
 
 // Nouveau DSL Kotlin 2.x pour le compilateur (remplace kotlinOptions { jvmTarget = "17" })
